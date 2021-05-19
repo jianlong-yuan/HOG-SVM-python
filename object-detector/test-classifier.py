@@ -40,7 +40,7 @@ if __name__ == "__main__":
     args = vars(parser.parse_args())
 
     # Read the image
-    im = imread(args["image"], as_grey=False)
+    im = imread(args["image"], as_gray=False)
     # min_wdw_sz = (100, 40)
     # step_size = (10, 10)
     downscale = args['downscale']
@@ -65,7 +65,7 @@ if __name__ == "__main__":
             if im_window.shape[0] != min_wdw_sz[1] or im_window.shape[1] != min_wdw_sz[0]:
                 continue
             # Calculate the HOG features
-            fd = hog(im_window, orientations, pixels_per_cell, cells_per_block, visualise=visualize, transform_sqrt=transform_sqrt)
+            fd = hog(im_window, orientations, pixels_per_cell, cells_per_block, visualize=visualize, transform_sqrt=transform_sqrt)
             pred = clf.predict(fd)
             if pred == 1:
                 print("Detection:: Location -> ({}, {})".format(x, y))
