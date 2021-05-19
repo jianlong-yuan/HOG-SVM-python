@@ -2,7 +2,7 @@
 from skimage.transform import pyramid_gaussian
 from skimage.io import imread
 from skimage.feature import hog
-from sklearn.externals import joblib
+import joblib
 import cv2
 import argparse as ap
 from nms import nms

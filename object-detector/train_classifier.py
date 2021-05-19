@@ -2,7 +2,7 @@
 from skimage.feature import local_binary_pattern
 from sklearn.svm import LinearSVC
 from sklearn.linear_model import LogisticRegression
-from sklearn.externals import joblib
+import joblib
 import argparse as ap
 import glob
 import os
