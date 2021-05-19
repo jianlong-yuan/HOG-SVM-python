@@ -2,7 +2,7 @@
 from skimage.feature import local_binary_pattern
 from skimage.feature import hog
 from skimage.io import imread
-from sklearn.externals import joblib
+import joblib
 # To read file names
 import argparse as ap
 import glob
@@ -33,7 +33,7 @@ if __name__ == "__main__":
     if not os.path.isdir(neg_feat_ph):
         os.makedirs(neg_feat_ph)
 
-    print "Calculating the descriptors for the positive samples and saving them"
+    print("Calculating the descriptors for the positive samples and saving them")
     for im_path in glob.glob(os.path.join(pos_im_path, "*")):
         im = imread(im_path, as_grey=True)
         if des_type == "HOG":
@@ -41,9 +41,9 @@ if __name__ == "__main__":
         fd_name = os.path.split(im_path)[1].split(".")[0] + ".feat"
         fd_path = os.path.join(pos_feat_ph, fd_name)
         joblib.dump(fd, fd_path)
-    print "Positive features saved in {}".format(pos_feat_ph)
+    print("Positive features saved in {}".format(pos_feat_ph))
 
-    print "Calculating the descriptors for the negative samples and saving them"
+    print("Calculating the descriptors for the negative samples and saving them")
     for im_path in glob.glob(os.path.join(neg_im_path, "*")):
         im = imread(im_path, as_grey=True)
         if des_type == "HOG":
@@ -51,6 +51,6 @@ if __name__ == "__main__":
         fd_name = os.path.split(im_path)[1].split(".")[0] + ".feat"
         fd_path = os.path.join(neg_feat_ph, fd_name)
         joblib.dump(fd, fd_path)
-    print "Negative features saved in {}".format(neg_feat_ph)
+    print("Negative features saved in {}".format(neg_feat_ph))
 
-    print "Completed calculating features from training images"
+    print("Completed calculating features from training images")

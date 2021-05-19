@@ -68,8 +68,8 @@ if __name__ == "__main__":
             fd = hog(im_window, orientations, pixels_per_cell, cells_per_block, visualise=visualize, transform_sqrt=transform_sqrt)
             pred = clf.predict(fd)
             if pred == 1:
-                print  "Detection:: Location -> ({}, {})".format(x, y)
-                print "Scale ->  {} | Confidence Score {} \n".format(scale,clf.decision_function(fd))
+                print("Detection:: Location -> ({}, {})".format(x, y))
+                print("Scale ->  {} | Confidence Score {} \n".format(scale,clf.decision_function(fd)))
                 detections.append((x, y, clf.decision_function(fd),
                     int(min_wdw_sz[0]*(downscale**scale)),
                     int(min_wdw_sz[1]*(downscale**scale))))
