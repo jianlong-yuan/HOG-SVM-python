@@ -38,10 +38,10 @@ model_path: ../data/models/svm.model
 
 ### About the modules
 
-* `extract-features.py` -- This module is used to extract HOG features of the training images.
-* `train-classifier.py` -- This module is used to train the classifier.
+* `extract_features.py` -- This module is used to extract HOG features of the training images.
+* `train_classifier.py` -- This module is used to train the classifier.
 * `nms.py` -- This module performs Non Maxima Suppression.
-* `test-classifier.py` -- This module is used to test the classifier using a test image.
+* `test_classifier.py` -- This module is used to test the classifier using a test image.
 * `config.py` -- Imports the configuration variables from `config.cfg`.
 
 ## Some of the results
