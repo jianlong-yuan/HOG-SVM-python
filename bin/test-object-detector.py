@@ -14,13 +14,13 @@ import os
 # Extract the features
 # pos_path = "../data/dataset/CarData/pos"
 # neg_path = "../data/dataset/CarData/neg"
-# os.system("python ../object-detector/extract-features.py -p {} -n {}".format(pos_path, neg_path))
+# os.system("python ../object-detector/extract_features.py -p {} -n {}".format(pos_path, neg_path))
 
 # Perform training
 # pos_feat_path =  "../data/features/pos"
 # neg_feat_path =  "../data/features/neg"
-# os.system("python ../object-detector/train-classifier.py -p {} -n {}".format(pos_feat_path, neg_feat_path))
+# os.system("python ../object-detector/train_classifier.py -p {} -n {}".format(pos_feat_path, neg_feat_path))
 
 # Perform testing 
 test_im_path = "../data/dataset/CarData/TestImages/test-18.pgm"
-os.system("python ../object-detector/test-classifier.py -i {} -d {}".format(test_im_path,2))
+os.system("python ../object-detector/test_classifier.py -i {} -d {}".format(test_im_path,2))

@@ -41,7 +41,7 @@ def nms(detections, threshold=.5):
     The output is a list of detections.
     '''
     if len(detections) == 0:
-	return []
+	    return []
     # Sort the detections based on confidence score
     detections = sorted(detections, key=lambda detections: detections[2],
             reverse=True)
